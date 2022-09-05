@@ -30,9 +30,6 @@ app.UseCors("AllowAll");
 app.UseSwagger();
 app.UseSwaggerUI();
 
-
-app.UseAuthorization();
-
 app.MapControllers();
-
+app.UseCors("AllowAll");
 app.Run();

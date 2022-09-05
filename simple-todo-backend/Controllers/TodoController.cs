@@ -41,7 +41,7 @@ namespace simple_todo_backend.Controllers
             _db.SaveChanges();
         }
 
-        [HttpDelete()]
+        [HttpDelete("{id}")]
         public void Delete(int id)
         {
             var todo = _db.Todos.Where(e => e.Id == id).First();
