@@ -32,14 +32,16 @@ namespace simple_todo_backend.Controllers
         }
 
         [HttpPost()]
-        public void Add(Todo todo)
+        public Todo Add(Todo todo)
         {
-            Thread.Sleep(_rng.Next(1000,5000));
-            if(todo.Title == "error") {
+            Thread.Sleep(_rng.Next(1000, 5000));
+            if (todo.Title == "error")
+            {
                 throw new NotImplementedException();
             }
-            _db.Todos.Add(todo);
+            var result = _db.Todos.Add(todo);
             _db.SaveChanges();
+            return todo;
         }
 
         [HttpPut()]
