@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace simple_todo_backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class TodoController : ControllerBase
     {
         private readonly ILogger<TodoController> _logger;

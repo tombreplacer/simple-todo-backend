@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 namespace simple_todo_backend.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class ToolController: ControllerBase
     {
         private readonly TodoContext _db;
