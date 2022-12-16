@@ -48,6 +48,10 @@ namespace simple_todo_backend.Controllers
         public void Update(Todo todo)
         {
             Thread.Sleep(_rng.Next(1000,5000));
+            if (todo.Title == "error1")
+            {
+                throw new NotImplementedException();
+            }
             _db.Todos.Update(todo);
             _db.SaveChanges();
         }
@@ -60,7 +64,7 @@ namespace simple_todo_backend.Controllers
             if(todo.Title == "error") {
                 throw new NotImplementedException();
             }
-            _db.Todos.Remove(todo);
+            _db.Todos.Remove(todo);         
             _db.SaveChanges();
         }
     }
